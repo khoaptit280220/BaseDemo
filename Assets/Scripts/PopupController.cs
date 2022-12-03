@@ -8,6 +8,7 @@ public class PopupController : Singleton<PopupController>
 {
     public Transform CanvasTransform;
     public CanvasScaler CanvasScaler;
+    public float DurationPopup = 0.2f;
     public List<Popup> Popups;
 
     private Dictionary<Type, Popup> dictionary = new Dictionary<Type, Popup>();

@@ -9,7 +9,7 @@ public class Popup : MonoBehaviour
 {
     public CanvasGroup CanvasGroup { get; set; }
     public Canvas Canvas { get; set; }
-    public float DurationPopup = 0.2f;
+
 
     private void Awake()
     {
@@ -21,7 +21,7 @@ public class Popup : MonoBehaviour
     {
         BeforeShow();
         gameObject.SetActive(true);
-        CanvasGroup.DOFade(1, DurationPopup).OnComplete(() =>
+        CanvasGroup.DOFade(1, PopupController.Instance.DurationPopup).OnComplete(() =>
         {
             CanvasGroup.interactable = true;
             AfterShown();

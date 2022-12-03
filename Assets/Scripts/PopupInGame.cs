@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class PopupInGame: Popup
+public class PopupInGame : Popup
 {
     private void Start()
     {
@@ -21,5 +21,9 @@ public class PopupInGame: Popup
     public void OnClickReplay()
     {
         GameManager.Instance.ReplayGame();
+    }
+    public void OnClickBackHome()
+    {
+        GameManager.Instance.ReturnHome();
     }
 }
