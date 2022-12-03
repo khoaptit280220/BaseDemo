@@ -41,11 +41,12 @@ public class GameManager : Singleton<GameManager>
     {
         GameState = GameState.PlayingGame;
         LevelController.CurrentLevel.gameObject.SetActive(true);
+        PopupController.Instance.HideAll();
         PopupController.Instance.Hide<PopupHome>();
         PopupController.Instance.Show<PopupInGame>();
     }
 
-    public void OnWinGame(float delayPopupShowTime = 2.5f)
+    public void OnWinGame(float delayPopupShowTime = 1f)
     {
         if (GameState == GameState.LoseGame || GameState == GameState.WinGame) return;
         GameState = GameState.WinGame;
@@ -53,18 +54,20 @@ public class GameManager : Singleton<GameManager>
 
         DOTween.Sequence().AppendInterval(delayPopupShowTime).AppendCallback(() =>
         {
-
+            PopupController.Instance.HideAll();
+            PopupController.Instance.Show<PopupWin>();
         });
     }
 
-    public void OnLoseGame(float delayPopupShowTime = 2.5f)
+    public void OnLoseGame(float delayPopupShowTime = 1f)
     {
         if (GameState == GameState.LoseGame || GameState == GameState.WinGame) return;
         GameState = GameState.LoseGame;
 
         DOTween.Sequence().AppendInterval(delayPopupShowTime).AppendCallback(() =>
         {
-
+            PopupController.Instance.HideAll();
+            PopupController.Instance.Show<PopupLose>();
         });
     }
 

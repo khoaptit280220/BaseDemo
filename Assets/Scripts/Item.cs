@@ -28,7 +28,7 @@ public class Item : MonoBehaviour
             GameManager.Instance.Point++;
             if (GameManager.Instance.Point == GameManager.Instance.LevelController.CurrentLevel.pointTarget)
             {
-                GameManager.Instance.OnWinGame();
+                GameManager.Instance.OnWinGame(0);
             }
             RePos();
             other.GetComponent<PlayerController>().SetColor(GetComponent<MeshRenderer>().material.color);

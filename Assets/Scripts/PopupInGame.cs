@@ -9,10 +9,12 @@ public class PopupInGame : Popup
     public TextMeshProUGUI textLevel;
     public TextMeshProUGUI textPoint;
     public TextMeshProUGUI textTarget;
-    private void Start()
+    public DynamicJoystick DynamicJoystick;
+
+    protected override void BeforeShow()
     {
         textLevel.text = "Level " + Data.CurrentLevel;
-        textTarget.text = "Target " + GameManager.Instance.LevelController.CurrentLevel.pointTarget + "Point";
+        textTarget.text = "Target " + GameManager.Instance.LevelController.CurrentLevel.pointTarget + " Point";
     }
 
     private void Update()
