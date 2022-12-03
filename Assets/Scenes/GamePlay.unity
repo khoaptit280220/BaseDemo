@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentLevel: {fileID: 0}
-  MaxLevel: 1
+  MaxLevel: 2
   StartLoopLevel: 1
 --- !u!1 &1951694929
 GameObject:

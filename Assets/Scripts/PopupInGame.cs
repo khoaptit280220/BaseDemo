@@ -6,9 +6,13 @@ using UnityEngine;
 
 public class PopupInGame : Popup
 {
+    public TextMeshProUGUI textLevel;
+    public TextMeshProUGUI textPoint;
+    public TextMeshProUGUI textTarget;
     private void Start()
     {
         textLevel.text = "Level " + Data.CurrentLevel;
+        textTarget.text = "Target " + GameManager.Instance.LevelController.CurrentLevel.pointTarget + "Point";
     }
 
     private void Update()
@@ -16,8 +20,7 @@ public class PopupInGame : Popup
         textPoint.text = "Point: " + GameManager.Instance.Point;
     }
 
-    public TextMeshProUGUI textLevel;
-    public TextMeshProUGUI textPoint;
+
     public void OnClickReplay()
     {
         GameManager.Instance.ReplayGame();
