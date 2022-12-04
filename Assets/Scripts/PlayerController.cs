@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 10.0f;
 
     public float speedRotate = 10;
+    public List<MeshRenderer> ListMeshRendererItem;
 
     private float horizontalInput;
 
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
+        StartColor();
     }
 
     // Update is called once per frame
@@ -63,5 +65,11 @@ public class PlayerController : MonoBehaviour
     private void Died()
     {
         GameManager.Instance.OnLoseGame(1);
+    }
+
+    private void StartColor()
+    {
+        int index = Random.Range(0, ListMeshRendererItem.Count);
+        meshRenderer.material.color = ListMeshRendererItem[index].material.color;
     }
 }
