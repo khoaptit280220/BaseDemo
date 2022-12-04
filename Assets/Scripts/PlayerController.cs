@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public MeshRenderer head;
+
     public float speed = 10.0f;
 
     public float speedRotate = 10;
@@ -43,7 +43,6 @@ public class PlayerController : MonoBehaviour
                 transform.position += direction * speed * Time.deltaTime;
             }
 
-
         }
 
     }
@@ -57,13 +56,12 @@ public class PlayerController : MonoBehaviour
         else
         {
             meshRenderer.material.color = _color;
-            head.material.color = _color;
         }
 
     }
 
     private void Died()
     {
-        GameManager.Instance.OnLoseGame(0);
+        GameManager.Instance.OnLoseGame(1);
     }
 }
